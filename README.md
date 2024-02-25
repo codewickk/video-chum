@@ -1,2 +1,1 @@
-# Netflix-clone
-Clone of popular streaming platform using HTML , CSS and JS
+A platform for two people to connect throutgh video call 
