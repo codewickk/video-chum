@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,110 +6,185 @@
 body {
     background-color: #DBE2EF;
     color: white;
-    font-family:"Poppins",sans-serif;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
 }
-.navbar{
-    position: absolute;
-    top: 0;
+.navbar {
     width: 100%;
-    height: 100px;
-    padding: 40px 50px ;
+    padding: 20px 10px;
     display: flex;
     justify-content: space-between;
-    z-index: 10;
+    align-items: center;
     background-color: white;
+    z-index: 10;
 }
-.nav_items{
+.nav_items, .nav_buttons {
     display: flex;
     gap: 10px;
+    align-items: center;
 }
-
-.navbar_videochum{
-    width: 190 px;
-    height: 100%;
-    background-color: whitesmoke;
-    border-radius: 6.6px;
-    
+.navbar_videochum {
+    width: 150px;
+    height: auto;
 }
-.video_chum_logo{
+.video_chum_logo {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
-.language_dropdown{
-    background:transparent;
+.language_dropdown {
+    background: transparent;
     border: none;
     color: black;
+    font-size: 1rem;
 }
-.login_button{
-    background:rgba(0, 0, 0, 0.8) ;
-    
+.login_button, .signup_button {
+    background: rgba(0, 0, 0, 0.8);
     color: whitesmoke;
     border-radius: 6.6px;
-    padding: 5px 5px;
+    padding: 10px 15px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
 }
-.signup_button{
-    background:rgba(0, 0, 0, 0.8) ;
-    color: white;
-    border-radius: 6.6px;
-    padding: 5px 5px;
+.welcome_bg_img_contain {
+    position: relative;
+    width: 100%;
+    height: 100vh;
 }
 .welcome_bg_img_contain img {
-    width: 100vw; 
-    height: 100vh; 
-    object-fit: cover; 
-    object-position: top; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
     opacity: 0.7;
 }
-.welcome_bg_img_overlay{
-    height: 100vh;
-    width: 100%;
+.welcome_bg_img_overlay {
     position: absolute;
-    inset: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.5);
 }
-.user_card{
+.user_card {
     position: absolute;
     top: 30%;
-    left: 32.5%;
-    gap: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     display: flex;
     flex-direction: column;
-
+    gap: 10px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
 }
-.instruciton{
+.instruciton {
     font-weight: 600;
-    font-size:xx-large;
-    
+    font-size: 2rem;
 }
-.user_directions{
-    font-size:larger;
+.user_directions {
+    font-size: 1.2rem;
 }
-.user_room{
+.user_room {
     background-color: white;
     border-radius: 4px;
-    font-size: large;
-    padding: 2.5px;
+    font-size: 1rem;
+    padding: 10px;
     color: black;
+    border: none;
+    margin-right: 10px;
 }
-.create_room{
-   border-radius:4px;
-    font-size: large;
-    padding: 2.5px;
-    background:rgba(0, 0, 0, 0.8);
+.create_room {
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.8);
     color: whitesmoke;
+    border: none;
+    cursor: pointer;
 }
-.footer{
-    background:rgba(0, 0, 0, 0.9) ;
+.room_creation {
     display: flex;
-    gap: 70px;
+    gap: 10px;
+    flex-wrap: wrap;
     justify-content: center;
-    padding: 50px;
+}
+.footer {
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+.footer div {
+    flex: 1 1 200px;
 }
 ul {
-    display: inline-block;
     list-style-type: none;
     padding: 0;
     margin: 0;
-  }
+}
+.footer h1 {
+    margin-bottom: 10px;
+}
+.footer p {
+    width: 100%;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar_videochum {
+        margin-bottom: 10px;
+    }
+    .user_card {
+        top: 20%;
+        width: 80%;
+    }
+    .instruciton {
+        font-size: 1.5rem;
+    }
+    .user_directions {
+        font-size: 1rem;
+    }
+    .user_room, .create_room {
+        font-size: 0.9rem;
+        padding: 5px;
+    }
+    .footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .footer div {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 5px;
+    }
+    .login_button, .signup_button {
+        padding: 5px 10px;
+        font-size: 0.9rem;
+    }
+    .instruciton {
+        font-size: 1.2rem;
+    }
+    .user_directions {
+        font-size: 0.9rem;
+    }
+    .user_room, .create_room {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+    .footer {
+        padding: 10px;
+    }
+}
 
